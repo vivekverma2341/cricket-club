@@ -1,0 +1,34 @@
+<?php
+include 'connect.php';
+
+if($_SERVER['REQUEST_METHOD']=="POST")
+	{
+		$a=$_POST['t1'];
+	$b=$_POST['t2'];
+	$c=$_POST['t3'];
+	$d=$_POST['t4'];
+	$e=$_POST['t5'];
+		$f=$_POST['t6'];
+		$g="player";
+	
+	
+		
+		$sql="insert into reg values('$a','$b','$c','$d','$e','$f','$g')";
+		if(mysqli_query($con,$sql))
+		{			
+			
+			header("location:index.php?msg=registration successfully");			
+		}		
+
+					
+		}else	{header("location:index.php?msg=error");		}	
+			
+		
+
+if(isset($_POST['sub']))
+		{
+			echo $_POST['sub'];
+			}
+	
+
+?>
